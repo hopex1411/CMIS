@@ -16,17 +16,17 @@ namespace cmis
             string menuAnswer;
             // arrayet myTxt contains menuItems
             string[] myTxt = { "Telefon", "Fornavn", "Efternavn", "Gade/Vej", "Husnummer", "Postnr", "Bynavn", "Email" };
-
             string[] myValues = new string[myTxt.Length];
-            string allData = myPath;
 
                 
-
+                // Main menu,
                 Console.WriteLine("[O] Opret [F] Find [V] Vis alle [Q] Afslut :");
                 menuAnswer = Console.ReadLine();
 
+                    // User creation
                     if (menuAnswer.ToLower() == "o")
                     {
+                        // Outputs myTxt and takes the data the user has inputted
                         for (int myRecord = 0; myRecord < myTxt.Length; myRecord++)
                         {
                             Console.Write(myTxt[myRecord] + ": ");
@@ -34,6 +34,7 @@ namespace cmis
                         }
                         Console.WriteLine("Tak - du har indtastet : ");
 
+                        // Outputs the data the user inputted
                         for (int myRecord = 0; myRecord < myTxt.Length; myRecord++)
                         {
                             myLine = myLine + myValues[myRecord] + ", ";
@@ -43,17 +44,19 @@ namespace cmis
 
                         Console.WriteLine(myLine);
                         Console.WriteLine("\n Skal data skrives til filen ?? j/n");
-
                         string yesNo = Console.ReadLine();
                         if (yesNo.ToLower() == "j")
                         {
+                        // Takes the data the user has inputted, and puts in the database
                             File.AppendAllText(myPath, myLine, Encoding.Unicode);
                             Console.WriteLine("Oplysninger gemmes ......");
                         }  
                     }
                 
+                    // User search
                     if (menuAnswer.ToLower() == "f")
                     {
+                        // Reads all data in the database
                         string[] myDatabase = File.ReadAllLines(myPath);
 
                         Console.Write("Søg efter: ");
@@ -61,6 +64,7 @@ namespace cmis
 
                         foreach (string line in myDatabase)
                         {
+                            //Checks if the user input matches anything in the database
                             if (line.Contains(mySearchString))
                             {
                                 Console.WriteLine(line);
@@ -72,7 +76,7 @@ namespace cmis
                         }
                     }
 
-
+                    // Full database output
                     if (menuAnswer.ToLower() == "v")
                     {
                         string[] myDatabase = File.ReadAllLines(myPath);
@@ -82,7 +86,7 @@ namespace cmis
                         }
                     }
                 
-
+            // Closes the application
             if (menuAnswer.ToLower()=="q")
             {
                 Environment.Exit(0);
