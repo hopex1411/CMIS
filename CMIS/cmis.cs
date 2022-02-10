@@ -24,8 +24,7 @@ namespace cmis
 
                 Console.WriteLine("[O] Opret [F] Find [V] Vis alle [Q] Afslut :");
                 menuAnswer = Console.ReadLine();
-                do
-                {
+
                     if (menuAnswer.ToLower() == "o")
                     {
                         for (int myRecord = 0; myRecord < myTxt.Length; myRecord++)
@@ -52,10 +51,7 @@ namespace cmis
                             Console.WriteLine("Oplysninger gemmes ......");
                         }  
                     }
-                } while (menuAnswer.ToLower() == "o");
-
-                do
-                {
+                
                     if (menuAnswer.ToLower() == "f")
                     {
                         string[] myDatabase = File.ReadAllLines(myPath);
@@ -67,18 +63,16 @@ namespace cmis
                         {
                             if (line.Contains(mySearchString))
                             {
-                                Console.WriteLine(myDatabase);
+                                Console.WriteLine(line);
                             }
                             else
                             {
-                                Console.WriteLine("Nope");
+                                Console.WriteLine("Der findes ikke noget i databsen som indeholder: " + mySearchString);
                             }
                         }
                     }
-                } while (menuAnswer.ToLower() == "f");
 
-                do
-                {
+
                     if (menuAnswer.ToLower() == "v")
                     {
                         string[] myDatabase = File.ReadAllLines(myPath);
@@ -86,9 +80,7 @@ namespace cmis
                         {
                             Console.WriteLine(line);
                         }
-                        break;
                     }
-                } while (menuAnswer.ToLower() == "v");
                 
 
             if (menuAnswer.ToLower()=="q")
