@@ -1,0 +1,14 @@
+C:\xampp\htdocs\github\CMIS\CMIS\bin\Debug\netcoreapp3.1\CMIS.exe
+C:\xampp\htdocs\github\CMIS\CMIS\bin\Debug\netcoreapp3.1\CMIS.deps.json
+C:\xampp\htdocs\github\CMIS\CMIS\bin\Debug\netcoreapp3.1\CMIS.runtimeconfig.json
+C:\xampp\htdocs\github\CMIS\CMIS\bin\Debug\netcoreapp3.1\CMIS.runtimeconfig.dev.json
+C:\xampp\htdocs\github\CMIS\CMIS\bin\Debug\netcoreapp3.1\CMIS.dll
+C:\xampp\htdocs\github\CMIS\CMIS\bin\Debug\netcoreapp3.1\CMIS.pdb
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.csproj.AssemblyReference.cache
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.AssemblyInfoInputs.cache
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.AssemblyInfo.cs
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.dll
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.pdb
+C:\xampp\htdocs\github\CMIS\CMIS\obj\Debug\netcoreapp3.1\CMIS.genruntimeconfig.cache
