@@ -11,6 +11,14 @@ namespace cmis
     {
         static void Main(string[] args)
         {
+            // Der mangler loops
+            // Opretning af database hvis ikke den findes
+            // Fejlmeddelser
+            // En menu som dukker op efter hvert valg
+            // Maks 15 linjer der vises af gangen når man udskriver alle i databasen
+            // Ændre stien til databasen til et mere hensigtsmæssigt sted
+            // Gør programmet mere lækkert(visuelt)
+
             string myLine = "";
             string myPath = @"C:\xampp\htdocs\github\CMIS\CMIS\database.txt";
             string menuAnswer;
