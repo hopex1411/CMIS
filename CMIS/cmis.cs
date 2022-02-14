@@ -69,10 +69,6 @@ namespace cmis
                             {
                                 Console.WriteLine(line);
                             }
-                            else
-                            {
-                                Console.WriteLine("Der findes ikke noget i databsen som indeholder: " + mySearchString);
-                            }
                         }
                     }
 
