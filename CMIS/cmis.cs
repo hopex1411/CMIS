@@ -129,10 +129,6 @@ namespace cmis
             }
             while (menuAnswer.ToLower() != "q");
 
-
-
-
-
             // Closes the application
             if (menuAnswer.ToLower() == "q")
             {
