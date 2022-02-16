@@ -12,27 +12,29 @@ namespace cmis
         static void Main(string[] args)
         {
             // Der mangler loops
-            // Opretning af database hvis ikke den findes
             // Fejlmeddelser
-            // En menu som dukker op efter hvert valg
             // Maks 15 linjer der vises af gangen når man udskriver alle i databasen
-            // Ændre stien til databasen til et mere hensigtsmæssigt sted
             // Gør programmet mere lækkert(visuelt)
 
             string myLine = "";
-            string myPath = @"C:\xampp\htdocs\github\CMIS\CMIS\database.txt";
+            Directory.CreateDirectory(@"C:\cmisData");
+            string myPath = @"C:\cmisData\database.txt";
             string menuAnswer;
             // arrayet myTxt contains menuItems
             string[] myTxt = { "Telefon", "Fornavn", "Efternavn", "Gade/Vej", "Husnummer", "Postnr", "Bynavn", "Email" };
             string[] myValues = new string[myTxt.Length];
 
-                
-                // Main menu,
+            do
+            {// Main menu,
                 Console.WriteLine("[O] Opret [F] Find [V] Vis alle [Q] Afslut :");
                 menuAnswer = Console.ReadLine();
 
-                    // User creation
-                    if (menuAnswer.ToLower() == "o")
+
+                // User creation
+                if (menuAnswer.ToLower() == "o")
+                {
+
+                    if (File.Exists(myPath))
                     {
                         // Outputs myTxt and takes the data the user has inputted
                         for (int myRecord = 0; myRecord < myTxt.Length; myRecord++)
@@ -55,14 +57,25 @@ namespace cmis
                         string yesNo = Console.ReadLine();
                         if (yesNo.ToLower() == "j")
                         {
-                        // Takes the data the user has inputted, and puts in the database
+                            // Takes the data the user has inputted, and puts in the database
                             File.AppendAllText(myPath, myLine, Encoding.Unicode);
                             Console.WriteLine("Oplysninger gemmes ......");
-                        }  
+                        }
                     }
-                
-                    // User search
-                    if (menuAnswer.ToLower() == "f")
+                    else
+                    {
+                        using (StreamWriter sw = File.AppendText(myPath))
+                        {
+                        }
+                        Console.WriteLine("Der er ingen database...... Database oprettet");
+                    }
+
+
+                }
+                // User search
+                if (menuAnswer.ToLower() == "f")
+                {
+                    if (File.Exists(myPath))
                     {
                         // Reads all data in the database
                         string[] myDatabase = File.ReadAllLines(myPath);
@@ -79,9 +92,20 @@ namespace cmis
                             }
                         }
                     }
+                    else
+                    {
+                        using (StreamWriter sw = File.AppendText(myPath))
+                        {
+                        }
+                        Console.WriteLine("Der er ingen database...... Database oprettet");
+                    }
 
-                    // Full database output
-                    if (menuAnswer.ToLower() == "v")
+                }
+
+                // Full database output
+                if (menuAnswer.ToLower() == "v")
+                {
+                    if (File.Exists(myPath))
                     {
                         string[] myDatabase = File.ReadAllLines(myPath);
                         foreach (string line in myDatabase)
@@ -89,7 +113,25 @@ namespace cmis
                             Console.WriteLine(line);
                         }
                     }
-                
+                    else
+                    {
+                        using (StreamWriter sw = File.AppendText(myPath))
+                        {
+                        }
+                        Console.WriteLine("Der er ingen database...... Database oprettet");
+                    }
+                    if (new FileInfo(myPath).Length == 0)
+                    {
+                        Console.WriteLine("databasen er tom");
+                    }
+                }
+            }
+            while (menuAnswer.ToLower() != "q");
+            
+            
+        
+        
+            
             // Closes the application
             if (menuAnswer.ToLower()=="q")
             {
