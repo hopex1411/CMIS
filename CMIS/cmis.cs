@@ -25,7 +25,8 @@ namespace cmis
             string[] myValues = new string[myTxt.Length];
 
             do
-            {// Main menu,
+            {
+                // Main menu,
                 Console.WriteLine("[O] Opret [F] Find [V] Vis alle [Q] Afslut :");
                 menuAnswer = Console.ReadLine();
 
@@ -127,17 +128,17 @@ namespace cmis
                 }
             }
             while (menuAnswer.ToLower() != "q");
-            
-            
-        
-        
-            
+
+
+
+
+
             // Closes the application
-            if (menuAnswer.ToLower()=="q")
+            if (menuAnswer.ToLower() == "q")
             {
                 Environment.Exit(0);
             }
-            
+
             Console.ReadKey();
         }
     }
