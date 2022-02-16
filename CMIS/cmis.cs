@@ -11,18 +11,17 @@ namespace cmis
     {
         static void Main(string[] args)
         {
-            // Der mangler loops
             // Fejlmeddelser
-            // Maks 15 linjer der vises af gangen når man udskriver alle i databasen
             // Gør programmet mere lækkert(visuelt)
 
-            string myLine = "";
             Directory.CreateDirectory(@"C:\cmisData");
+            string myLine = "";
             string myPath = @"C:\cmisData\database.txt";
             string menuAnswer;
             // arrayet myTxt contains menuItems
             string[] myTxt = { "Telefon", "Fornavn", "Efternavn", "Gade/Vej", "Husnummer", "Postnr", "Bynavn", "Email" };
             string[] myValues = new string[myTxt.Length];
+            int counter = 0;
 
             do
             {
@@ -62,6 +61,7 @@ namespace cmis
                             File.AppendAllText(myPath, myLine, Encoding.Unicode);
                             Console.WriteLine("Oplysninger gemmes ......");
                         }
+                        myLine="";
                     }
                     else
                     {
@@ -112,6 +112,12 @@ namespace cmis
                         foreach (string line in myDatabase)
                         {
                             Console.WriteLine(line);
+                            counter++;
+                            if(counter % 15 == 0)
+                            {
+                                Console.WriteLine("Tryk for at se flere");
+                                Console.ReadKey();
+                            }
                         }
                     }
                     else
