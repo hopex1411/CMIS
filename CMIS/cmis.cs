@@ -14,7 +14,7 @@ namespace cmis
             // Fejlmeddelser
             // Gør programmet mere lækkert(visuelt)
 
-            Directory.CreateDirectory(@"C:\cmisData");
+            Directory.CreateDirectory(@"C:\cmisData");  
             string myLine = "";
             string myPath = @"C:\cmisData\database.txt";
             string menuAnswer;
@@ -83,6 +83,10 @@ namespace cmis
 
                         Console.Write("Søg efter: ");
                         string mySearchString = Console.ReadLine();
+                        if (new FileInfo(myPath).Length == 0)
+                        {
+                            Console.WriteLine("databasen er tom");
+                        }
 
                         foreach (string line in myDatabase)
                         {
@@ -117,8 +121,11 @@ namespace cmis
                             {
                                 Console.WriteLine("Tryk for at se flere");
                                 Console.ReadKey();
+                                Console.Clear();
                             }
+                            
                         }
+                        
                     }
                     else
                     {
@@ -131,6 +138,10 @@ namespace cmis
                     {
                         Console.WriteLine("databasen er tom");
                     }
+                }
+                if(menuAnswer.ToLower()!="o"&&menuAnswer.ToLower()!="f"&&menuAnswer.ToLower()!="v"&&menuAnswer.ToLower()!="q")
+                {
+                    Console.WriteLine("Du har indtastet et ugyldigt tegn.");
                 }
             }
             while (menuAnswer.ToLower() != "q");
