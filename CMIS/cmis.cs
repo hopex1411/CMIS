@@ -37,6 +37,7 @@ namespace cmis
                 // User creation
                 if (menuAnswer.ToLower() == "o")
                 {
+                    Console.Clear();
 
                     if (File.Exists(myPath))
                     {
